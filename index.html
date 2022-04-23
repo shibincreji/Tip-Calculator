@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./images/favicon-32x32.png"
+        />
+        <title>Frontend Mentor | Tip calculator app</title>
+        <link rel="stylesheet" href="./style.css" />
+    </head>
+    <body>
+        <header>
+            <h1 class="hide">Splitter</h1>
+            <img src="./images/logo.svg" alt="logo" />
+        </header>
+        <main class="splitter">
+            <section class="splitter__left">
+                <h2 class="hide">Splitter Form</h2>
+                <form>
+                    <label for="bill">Bill <span>Can't be zero</span></label>
+                    <input
+                        type="number"
+                        id="bill"
+                        placeholder="0"
+                        required
+                        class="bill"
+                    />
+                    <label for="tip">Select Tip % <span>Can't be zero</span></label>
+                    <div class="tips">
+                        <button class="tip-btn">5%</button>
+                        <button class="tip-btn">10%</button>
+                        <button class="tip-btn">15%</button>
+                        <button class="tip-btn">25%</button>
+                        <button class="tip-btn">50%</button>
+                        <input type="number" id="tip" placeholder="Custom" />
+                    </div>
+                    <label for="people"
+                        >Number of People <span>Can't be zero</span></label
+                    >
+                    <input
+                        type="number"
+                        id="people"
+                        placeholder="0"
+                        required
+                        class="people"
+                    />
+                </form>
+            </section>
+            <section class="splitter__right">
+                <h2 class="hide">Splitter Result</h2>
+                <div class="result tip">
+                    <div>
+                        <h2>Tip Amount</h2>
+                        <p>/person</p>
+                    </div>
+                    <p class="amount">$0.00</p>
+                </div>
+                <div class="result total">
+                    <div>
+                        <h2>Total</h2>
+                        <p>/person</p>
+                    </div>
+                    <p class="amount">$0.00</p>
+                </div>
+                <button type="reset" class="reset-btn">Reset</button>
+            </section>
+        </main>
+        <script src="./script.js"></script>
+    </body>
+</html>

@@ -1,0 +1,221 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: hsl(185, 41%, 84%);
+    display: flex;
+    min-height: 100vh;
+    padding: 3rem 2rem;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5rem;
+    font-family: "Space Mono", monospace;
+}
+
+input {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: hsl(189, 41%, 97%);
+    font-family: inherit;
+    text-align: right;
+    color: hsl(183, 100%, 15%);
+    font-size: 1.5rem;
+    width: 100%;
+}
+
+input::placeholder {
+    color: hsl(184, 14%, 56%);
+}
+
+input:focus {
+    outline: 2px solid hsl(172, 67%, 45%);
+}
+
+input.error {
+    outline-color: rgb(255, 66, 66);
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+label {
+    color: hsl(186, 14%, 43%);
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+label span {
+    color: rgb(255, 66, 66);
+    display: none;
+}
+
+span.error {
+    display: inline;
+}
+
+* + label {
+    margin-top: 2rem;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    font-family: inherit;
+    border: none;
+    cursor: pointer;
+}
+
+.splitter {
+    background-color: white;
+    max-width: 900px;
+    width: 100%;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    box-shadow: 0 1rem 5rem rgba(0, 0, 0, 0.123);
+    margin-bottom: 5rem;
+}
+
+.splitter__left form {
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.tips {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.tip-btn {
+    background-color: hsl(183, 100%, 15%);
+    color: white;
+    border-radius: 5px;
+    font-size: 1.5rem;
+}
+
+.splitter__right {
+    background-color: hsl(183, 100%, 15%);
+    padding: 3rem 2rem 2rem;
+    border-radius: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.result {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.result h2 {
+    color: white;
+    font-size: 1rem;
+}
+
+.result p {
+    color: hsl(184, 14%, 56%);
+    font-size: 0.9rem;
+}
+
+p.amount {
+    color: hsl(172, 67%, 45%);
+    font-size: 3rem;
+}
+
+.reset-btn {
+    margin-top: auto;
+    background-color: hsl(172, 67%, 45%);
+    border-radius: 5px;
+    font-size: 1.3rem;
+    color: hsl(183, 100%, 15%);
+    text-transform: uppercase;
+}
+
+.active {
+    background-color: hsl(172, 67%, 45%);
+    color: hsl(183, 100%, 15%);
+}
+
+.reset-btn:hover,
+.tip-btn:hover {
+    background-color: hsl(185, 41%, 84%);
+    color: hsl(183, 100%, 15%);
+}
+
+label:after {
+    position: absolute;
+    top: 3rem;
+    left: 1rem;
+    bottom: 0.5rem;
+}
+
+label:nth-of-type(1)::after {
+    content: url("./images/icon-dollar.svg");
+}
+
+label:nth-of-type(3)::after {
+    content: url("./images/icon-person.svg");
+}
+
+@media screen and (max-width: 900px) {
+    body {
+        padding: 3rem 0 0;
+    }
+    .splitter {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+        margin-bottom: 0;
+        border-radius: 1.5rem 1.5rem 0 0;
+    }
+    .splitter__left form {
+        margin: 0;
+    }
+    .tips {
+        grid-template-columns: 1fr 1fr;
+    }
+    p.amount {
+        font-size: 2rem;
+    }
+    .result h2,
+    p {
+        font-size: 0.8rem;
+    }
+    .reset-btn {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 350px) {
+    :root {
+        font-size: 10px;
+    }
+}
+
+.hide {
+    position: absolute;
+    left: -9999999px;
+}
